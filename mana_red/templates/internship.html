@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now</title>
+    <link rel="stylesheet" href="/static/css/form.css">
+    <script> const csrf = "{{ csrf }}" </script>
+    <script src="/static/js/jquery-min.js"></script>
+    <script src="/static/js/form.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form class="centered-form" >
+            <h1>Submit Form</h1>
+            <input type="text" placeholder="Field 1" id="1" name="field1" required>
+            <input type="text" placeholder="Field 2" id="2" name="field2" >
+            <input type="text" placeholder="Field 3" name="field3" >
+            <input type="text" placeholder="Field 4" name="field4" >
+            <input type="text" placeholder="Field 5" name="field5" >
+            <input type="text" placeholder="Field 6" name="field6" >
+            <input type="text" placeholder="Field 7" name="field7" >
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
