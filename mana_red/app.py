@@ -28,7 +28,7 @@ def internship_apply():
     text = str(data);
     server = 'mana.red'
     mail.sendMail(to, fr, subject, text,server)
-    mail.sendMail(['charlie@vannorman.ai'],'charlie@mana.red','test2','test3','mana.red')
+#     mail.sendMail(['charlie@vannorman.ai'],'charlie@mana.red','test2','test3','mana.red')
     return jsonify({'success':True});
 
 

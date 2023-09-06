@@ -1,19 +1,26 @@
 
 $(document).ready(function(){
-    $('#submit').on('click',function(){
-        console.log('ha');
-        $.ajax({
+    $('#submit').on('click',function(event){
+         event.preventDefault();
+         $.ajax({
             type: 'POST',
             url: "/internship/apply",
             headers: {
                 "X-CSRFToken" : csrf,
                 "Content-Type": "application/json"
             },
-            data : JSON.stringify({}), // { data1 : $('#1').val()},
+            data : JSON.stringify({ 
+                name : $('#name').val(),
+                email : $('#email').val(),
+                link1 : $('#link1').val(),
+                link2  : $('#link2').val(),
+                message : $('#message').val(),
+                }),
             dataType : 'json',
             contentType : 'application/json',
             success: function (e) {
-                alert('suck');
+                alert('Thanks for applying, '+$('#name').val()+'!');
+                $('input').each(function(){$(this).val('');})
             },
             error: function (e) {
                 alert('no');
