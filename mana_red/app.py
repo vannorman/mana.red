@@ -1,5 +1,4 @@
 import sys
-sys.stdout = open('/home/ubuntu/mana.red/mana_red/static/output.logs', 'w')
 from datetime import datetime
 import json
 from os import environ as env
@@ -9,14 +8,15 @@ from authlib.integrations.flask_client import OAuth
 from dotenv import find_dotenv, load_dotenv
 from flask import Flask, redirect, render_template, session, url_for, jsonify, request
 
-from settings_local import mail
+try: from settings_local import mail
+except: pass
 
 app = Flask(__name__)
 app.secret_key = env.get("APP_SECRET_KEY")
 
-import logging
-app.logger.setLevel(logging.DEBUG)  # Set log level to DEBUG for debugging
-logging.basicConfig(filename='/home/ubuntu/mana.red/mana_red/flask.log', level=logging.DEBUG)
+# import logging
+#app.logger.setLevel(logging.DEBUG)  # Set log level to DEBUG for debugging
+# logging.basicConfig(filename='/home/ubuntu/mana.red/mana_red/flask.log', level=logging.DEBUG)
 
 @app.route('/internship/apply', methods=['POST'])
 def internship_apply():
