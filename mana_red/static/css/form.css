@@ -25,13 +25,19 @@ h1 {
     margin-bottom: 20px;
 }
 
-input {
+input, #whichPosition {
     width: 400px;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 18px;
+    margin:10px auto;
+
+}
+
+#whichPosition{
+    outline:1px solid #333;
 }
 
 button {
@@ -54,7 +60,7 @@ button:hover {
     .centered-form {
         width:85%;
     }
-    input {
+    input, #whichPosition {
         width:85%;
     }
     button {

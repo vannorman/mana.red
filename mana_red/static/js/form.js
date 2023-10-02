@@ -10,13 +10,13 @@ $(document).ready(function(){
                 "Content-Type": "application/json"
             },
             data : JSON.stringify({ 
+                which : $('#which').val(),
                 name : $('#name').val(),
                 email : $('#email').val(),
                 link1 : $('#link1').val(),
-                which : $('#which').val(),
                 howhear : $('#howhear').val(),
                 message : $('#message').val(),
-                }),
+                }).replaceAll("',","',\n"),
             dataType : 'json',
             contentType : 'application/json',
             success: function (e) {

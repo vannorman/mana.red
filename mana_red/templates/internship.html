@@ -41,18 +41,20 @@ At Mana Games, we believe in the power of passion and dedication. We're committe
         </div>
         <form class="centered-form" >
             <h1>Mana Games Internship Application</h1>
-            <input type="text" placeholder="Name" id="name" name="field1" required>
-            <input type="text" placeholder="Email" id="email" name="field2" >
-            <br /><label for="which">Which position?:</label><br />
+            <div id="whichPosition">
+                <label for="which">Which position?:</label>
                 <select id="which" name="dropdown">
                     <option value="none">-- Please Select -- </option>
                     <option value="programming">Programming / Game Design</option>
                     <option value="social_media">Social Media / Marketing</option>
                     <option value="community_manager">Community Manager</option>
-                </select><br />
-            <input type="text" placeholder="Link(s) to portfolio(s)" id="link1" name="field2" >
+                </select>
+            </div>
+             <input type="text" placeholder="Name" id="name" name="field1" required>
+            <input type="text" placeholder="Email" id="email" name="field2" >
+           <input type="text" placeholder="Link(s) to portfolio(s) if available" id="link1" name="field2" >
             <input type="text" placeholder="How did you hear about us?" id="howhear" name="field2" >
-            <input type="text" placeholder="Message" id="message" name="field2" >
+            <input type="text" placeholder="Additional Notes" id="message" name="field2" >
             <button id="submit">Submit</button>
         </form>
     </div>
