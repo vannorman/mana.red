@@ -17,6 +17,7 @@ body {
 
 .centered-form {
     text-align: center;
+    width:640px;
 }
 
 h1 {
@@ -25,7 +26,7 @@ h1 {
 }
 
 input {
-    width: 100%;
+    width: 400px;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -34,7 +35,7 @@ input {
 }
 
 button {
-    width: 100%;
+    width: 300px;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
@@ -48,3 +49,17 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+@media screen and (max-width: 640px){
+    .centered-form {
+        width:85%;
+    }
+    input {
+        width:85%;
+    }
+    button {
+        width:75%;
+    }
+}
+
+

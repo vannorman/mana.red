@@ -13,3 +13,11 @@
         width: 90%;
     }
 }
+#logo {
+    width:120px;
+    height:120px;
+    margin:0 auto;
+    background-image:url('/static/img/mana_games_logo.png');
+    background-repeat:no-repeat;
+    background-size:contain;
+}

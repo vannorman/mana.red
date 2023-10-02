@@ -31,7 +31,9 @@ def internship_apply():
 #     mail.sendMail(['charlie@vannorman.ai'],'charlie@mana.red','test2','test3','mana.red')
     return jsonify({'success':True});
 
-
+@app.route('/analytics')
+def analytics():
+    return render_template('analytics.html',)
 
 @app.route('/internship')
 def internship():

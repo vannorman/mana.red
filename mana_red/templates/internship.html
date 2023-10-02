@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply Now</title>
+    <link rel="icon" href="/static/img/mana_games_logo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/static/css/form.css" />
     <link rel="stylesheet" href="/static/css/internship.css" />
     <script> const csrf = "{{ csrf }}" </script>
@@ -13,7 +14,8 @@
 <body>
     <div class="container">
         <div id="main">
-<div id="title">🚀 Internship Opportunity at Mana Games 🚀</div>
+            <div id="logo"></div>
+<div id="title">🚀 Internship Opportunity 🚀</div>
 <p>At Mana Games, our mission is to change the world's relationship with mathematics through video games — and to enable creators everywhere to be a part of the journey.
 
 <h3>🎮 Game Design & Programming Intern</h3>
@@ -41,8 +43,15 @@ At Mana Games, we believe in the power of passion and dedication. We're committe
             <h1>Mana Games Internship Application</h1>
             <input type="text" placeholder="Name" id="name" name="field1" required>
             <input type="text" placeholder="Email" id="email" name="field2" >
-            <input type="text" placeholder="Link to portfolio" id="link1" name="field2" >
-            <input type="text" placeholder="Additional links" id="link2" name="field2" >
+            <br /><label for="which">Which position?:</label><br />
+                <select id="which" name="dropdown">
+                    <option value="none">-- Please Select -- </option>
+                    <option value="programming">Programming / Game Design</option>
+                    <option value="social_media">Social Media / Marketing</option>
+                    <option value="community_manager">Community Manager</option>
+                </select><br />
+            <input type="text" placeholder="Link(s) to portfolio(s)" id="link1" name="field2" >
+            <input type="text" placeholder="How did you hear about us?" id="howhear" name="field2" >
             <input type="text" placeholder="Message" id="message" name="field2" >
             <button id="submit">Submit</button>
         </form>
