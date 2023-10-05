@@ -15,196 +15,48 @@ body {
     overflow-x:hidden;
 }
 
-#header {
-    height:60px;
-    background-color:#522;
-    width:100%;
-    position:fixed;
-}
-#loadTrips{
-
-    display:none;
-}
-#savedTrips, #notePopup {
-    position:fixed;
-    display:none;
-    width:80%;
-    height:70%;
-    left:10%;
-    top:20%;
-    border:3px solid #444;
-    background-color:#eee;
-    overflow-y:scroll;
-    transition: all 0.3s;
-    z-index:100;
+#logo {
+    background-image:url('/static/img/mana-games-logo.png');
+    width:357px;
+    height:48px;
+    position:relative;
+    margin:0 auto;
+    top:5%;
 }
 
-#savedTrips .header, #notePopup .header {
-    position:absolute;top:0;
+#titleText {
+    margin:0 auto;
     text-align:center;
-}
-
-#savedTrips ul {
     position:relative;
-    width:70%;
-    left:15%;
-    list-style: none;
-    padding-left: 0;
-    }
-
-#savedTrips ul li {
-    border: 1px solid #333;
-    position:relative;
-}
-#savedTrips ul li .buttons {
-    float:right;
-    top: 20px;
-    position: absolute;
-    right: 0;
-}
-
-#saveResult{
-    color:green;
-}
-
-.closePopups {
-   position:relative;
-   top:0;
-   left:calc(100% - 34px);
-   text-align:center;
-   line-height:34px;
-   font-size:1.5em;
-   width:34px;
-   height:34px;
-   background-color:gray;
-    border-radius:17px;
-}
-
-.closePopups:hover {
-    cursor:pointer;
-}
-
-#container {
-    position:relative;
-    margin-top:60px;
-}
-.calendar {
-  display: flex;
-  flex-wrap: wrap;
-  width: 64vw;
-}
-
-.monthTitle {
-    width:100%;
-    font-size:2.5em;
-    text-align:center;
-}
-.box {
-    position:relative;
-  width: calc(100% / 7); /* Set the width to occupy 1/7th of the container */
-  height:100px;
-  background-color: #e0e0e0;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-.box .num {
-    top:0;
-    left:0;
-    width:16px;
-    height:16px;
-    font-size:15px;
+    top:6.5%;
+    font-size:1.8em;
     color:black;
-
-}
-/*
-#box4::after {
-content: "";
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 200px solid #ff0000;
-  position: absolute;
-  top: 0;
-  left: 0;
-}*/
-
-#menu {
-    position:absolute;
-    right:0;
-    top:20;
-    width:30vw;
+    font-family:Nunito;
 }
 
-#currentTrip {
-    padding:15px;
-    border: 1px solid #333;
-}
-
-.citiesTable {
-    display: table;
-}
-
-.numDays {
-    width:40px;
-}
-
-.up, .down {
-    width:10px;
-    height:10px;
-    border: 1px solid black;
-    font-size:0.8em;
-
-}
-.up:hover, .down:hover{
-    cursor:pointer;
-}
-
-.disabled {
-    pointer-events:none;
-    background-color:none;
-    border:none;
-}
-
-#cities td {
-    height:36px;
-}
-
-button:hover{
-    cursor:pointer;
-}
-
-.deleteTrip {
-    background-color:#c33;
-    float:right;
-}
-
-.note {
-    position:absolute;
-    top:50%;
+#main {
     width:100%;
-    height:50%;
-    white-space: nowrap;
-    overflow:hidden;
-    outline:1px dotted blue;
+    position:fixed;
+    height:100%;
+    background-image:url('/static/img/splash.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
-#notePopup .popupButtons {
-    position: relative;
-    left: calc(50% - 200px);
-    top: calc(100% - 50px);
-    width: 400px;
-    text-align: center;
-    }
+a, a:visited, a:link, a:hover, a:active {
+    color:#111;
+}
 
-#noteText {
-    position:absolute;left:80px;
-    width:80%;
-    height:50%;
-    outline:1px dotted black;
+#inquireWithin {
+    position:fixed;
+    top:90%;
+    margin:0 auto;
+    text-align:Center;
+    background:#fff6;
+    width:100%;
+    height:60px;
+    color:black;
+    font-size:1.3em;
+
 }
-#noteTextArea {
-    position:absolute;left:80px;
-    display:none;
-}
-#saveNote, #doneNote {display:none;}
