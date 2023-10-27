@@ -18,6 +18,17 @@ app.secret_key = env.get("APP_SECRET_KEY")
 #app.logger.setLevel(logging.DEBUG)  # Set log level to DEBUG for debugging
 # logging.basicConfig(filename='/home/ubuntu/mana.red/mana_red/flask.log', level=logging.DEBUG)
 
+@app.route('/waitlist/apply', methods=['POST'])
+def waitlist_apply():
+    data = request.get_json()
+    to = ['charlie@vannorman.ai','federico.chialvo@gmail.com']
+    fr = 'charlie@mana.red'
+    subject = "Mana Games - Waitlist";
+    text = str(data);
+    server = 'mana.red'
+    mail.sendMail(to, fr, subject, text,server)
+    return jsonify({'success':True});
+
 @app.route('/internship/apply', methods=['POST'])
 def internship_apply():
     data = request.get_json()
@@ -34,6 +45,10 @@ def internship_apply():
 @app.route('/analytics')
 def analytics():
     return render_template('analytics.html',)
+
+@app.route('/waitlist')
+def waitlist():
+    return render_template('waitlist.html',)
 
 @app.route('/internship')
 def internship():
