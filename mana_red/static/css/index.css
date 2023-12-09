@@ -38,13 +38,27 @@ body {
     font-family:Nunito;
 }
 #waitlist {
-    margin:0 auto;
-    text-align:center;
-    position:relative;
-    top:20px;
-    font-size:1.3em;
-    color:black;
-    font-family:Nunito;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 60px;
+    font-size: 1.5em;
+    color: black;
+    background-color: white;
+    border-radius: 25px;
+    font-family: Nunito;
+    line-height: 47px;
+    vertical-align: center;
+    width: 240px;
+    font-weight:bold;
+    height: 50px;
+    border: 2px solid black;
+    text-decoration: none;
+    transition: all 0.3s
+    }
+#waitlist:hover{
+    background-color:orange;
+    cursor:pointer;
 }
 
 #main {
@@ -59,7 +73,9 @@ body {
 
 a, a:visited, a:link, a:hover, a:active {
     color:#111;
+    text-decoration:none;
 }
+
 
 #inquireWithin {
     position:fixed;

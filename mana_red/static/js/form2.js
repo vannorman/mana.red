@@ -2,6 +2,14 @@
 $(document).ready(function(){
     $('#submit').on('click',function(event){
          event.preventDefault();
+         var email =  $('#email').val();
+         if (!validateEmail(email)){
+            $('#email').css('background','#faa');
+            $('#email').val('Pls enter a valid email');
+            return;
+         } else {
+            $('#email').css('background','#fff');
+         }
          $.ajax({
             type: 'POST',
             url: "/waitlist/apply",
@@ -10,7 +18,7 @@ $(document).ready(function(){
                 "Content-Type": "application/json"
             },
             data : JSON.stringify({ 
-                email : $('#email').val(),
+                email : email,
                 howhear : $('#howhear').val(),
                 }).replaceAll("',","',\n"),
             dataType : 'json',
@@ -25,3 +33,11 @@ $(document).ready(function(){
         });
     });
 });
+
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};

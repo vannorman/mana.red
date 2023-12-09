@@ -22,8 +22,15 @@
         <form class="centered-form" >
             <h1>Mana Games Waitlist</h1>
             <br/> We will never spam you; email used only for our game; never resold</br>
-            <input type="text" placeholder="Email" id="email" name="field2" >
-            <input type="text" placeholder="How did you hear about us?" id="howhear" name="field2" >
+            <input type="text" placeholder="Email" id="email" name="field2" onclick="this.select();">
+            <input list="howhear2" name="howhear" placeholder="How did you hear about us?" id="howhear">
+              <datalist id="howhear2">
+                <option value="No idea">
+                <option value="Searched">
+                <option value="Someone told me">
+                <option value="Mathbreakers">
+                <option value="Super Math World">
+              </datalist>
             <button id="submit">Submit</button>
         </form>
     </div>
