@@ -40,22 +40,23 @@ body {
 #waitlist {
     margin: 0 auto;
     text-align: center;
-    position: relative;
-    top: 60px;
-    font-size: 1.5em;
+    position: fixed;
+    bottom: 31%;
+    left: calc(50% - 180px);
+    font-size: 2em;
     color: black;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 50px;
     font-family: Nunito;
-    line-height: 47px;
+    line-height: 70px;
     vertical-align: center;
-    width: 240px;
-    font-weight:bold;
-    height: 50px;
+    width: 360px;
+    font-weight: bold;
+    height: 70px;
     border: 2px solid black;
     text-decoration: none;
-    transition: all 0.3s
-    }
+    transition: all 0.3s;
+}
 #waitlist:hover{
     background-color:orange;
     cursor:pointer;
@@ -130,5 +131,13 @@ a, a:visited, a:link, a:hover, a:active {
         display:block;
         margin:10px auto;
     }
+}
+@font-face {
+    font-family: Nunito;
+    src: url('/static/fonts/Nunito-Regular.ttf');
+}
+@font-face {
+    font-family: NunitoBold;
+    src: url('/static/fonts/Nunito-Bold.ttf');
 }
 
