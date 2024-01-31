@@ -123,6 +123,10 @@ a, a:visited, a:link, a:hover, a:active {
     background-color:#55f;
 }
 @media screen and (max-width: 460px){
+    #logo {
+        width: 390px;
+        height:50px;
+    }
     #inquireWithin {
         top:calc(100% - 120px);
         height:120px;
