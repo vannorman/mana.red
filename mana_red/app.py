@@ -1,3 +1,4 @@
+import os
 import sys
 from datetime import datetime
 import json
@@ -25,26 +26,35 @@ app.secret_key = env.get("APP_SECRET_KEY")
 @app.route('/waitlist/apply', methods=['POST'])
 def waitlist_apply():
     data = request.get_json()
-    to = ['charlie@vannorman.ai','federico.chialvo@gmail.com']
+    ip = request.remote_addr
+    to = ['charlie@vannorman.ai' ]
     fr = 'charlie@mana.red'
     subject = "Mana Games - Waitlist";
     text = str(data);
+    text += " ip : "+str(ip)
     server = 'mana.red'
-    mail.sendMail(to, fr, subject, text,server)
-    return jsonify({'success':True});
+    #mail.sendMail(to, fr, subject, text,server)
 
-@app.route('/internship/apply', methods=['POST'])
-def internship_apply():
-    data = request.get_json()
-#    app[data]
-    to = ['charlie@vannorman.ai','federico.chialvo@gmail.com']
-    fr = 'charlie@mana.red'
-    subject = "Internship Application Received";
-    text = str(data);
-    server = 'mana.red'
-    mail.sendMail(to, fr, subject, text,server)
-#     mail.sendMail(['charlie@vannorman.ai'],'charlie@mana.red','test2','test3','mana.red')
-    return jsonify({'success':True});
+    try:
+        path = "static/lists/"
+        CST = pytz.timezone('US/Central')
+        now = datetime.datetime.now(CST)
+        today = now.strftime("%Y.%m.%d")
+        if not os.path.exists(path):
+            os.makedirs(path)
+        filename = os.path.join(path,"malinglist.csv")
+        if not os.path.exists(filename):
+            with open(filename,'w+'):
+                pass
+
+        with open (filename, "a") as file:
+            file.write(",".join([ip,str(data),today]))
+        return jsonify({'success':True});
+
+    except: return jsonify({'success':False})            
+
+
+
 
 @app.route('/analytics')
 def analytics():

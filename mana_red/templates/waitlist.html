@@ -10,6 +10,21 @@
     <script> const csrf = "{{ csrf }}" </script>
     <script src="/static/js/jquery-min.js"></script>
     <script src="/static/js/form2.js"></script>
+     <script>
+      // Initialize the agent at application startup.
+      var clientId = "Undetected";
+      const fpPromise = import('/static/js/v4.js')
+        .then(FingerprintJS => FingerprintJS.load())
+
+      // Get the visitor identifier when you need it.
+      fpPromise
+        .then(fp => fp.get())
+        .then(result => {
+          // This is the visitor identifier:
+          clientId = result.visitorId;
+        })
+    </script>
+
 </head>
 <body>
     <div class="container">
