@@ -25,6 +25,7 @@ app.secret_key = env.get("APP_SECRET_KEY")
 
 @app.route('/waitlist/apply', methods=['POST'])
 def waitlist_apply():
+
     data = request.get_json()
     ip = request.remote_addr
     to = ['charlie@vannorman.ai' ]
@@ -35,21 +36,20 @@ def waitlist_apply():
     server = 'mana.red'
     #mail.sendMail(to, fr, subject, text,server)
 
-    try:
-        path = "static/lists/"
-        CST = pytz.timezone('US/Central')
-        now = datetime.datetime.now(CST)
-        today = now.strftime("%Y.%m.%d")
-        if not os.path.exists(path):
-            os.makedirs(path)
-        filename = os.path.join(path,"malinglist.csv")
-        if not os.path.exists(filename):
-            with open(filename,'w+'):
-                pass
+    path = "static/lists/"
+    now = datetime.now()
+    today = now.strftime("%Y.%m.%d")
+    if not os.path.exists(path):
+        os.makedirs(path)
+    filename = os.path.join(path,"malinglist.csv")
+    if not os.path.exists(filename):
+        with open(filename,'w+'):
+            pass
 
-        with open (filename, "a") as file:
-            file.write(",".join([ip,str(data),today]))
-        return jsonify({'success':True});
+    with open (filename, "a") as file:
+        file.write(",".join([ip,str(data),today]))
+    
+    try: return jsonify({'success':True});
 
     except: return jsonify({'success':False})            
 
