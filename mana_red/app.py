@@ -41,13 +41,13 @@ def waitlist_apply():
     today = now.strftime("%Y.%m.%d")
     if not os.path.exists(path):
         os.makedirs(path)
-    filename = os.path.join(path,"malinglist.csv")
+    filename = os.path.join(path,"mailing_list.csv")
     if not os.path.exists(filename):
         with open(filename,'w+'):
             pass
 
     with open (filename, "a") as file:
-        file.write(",".join([ip,str(data),today]))
+        file.write(",".join([ip,str(data),today])+"\n")
     
     try: return jsonify({'success':True});
 

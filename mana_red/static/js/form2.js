@@ -29,7 +29,7 @@ $(document).ready(function(){
                 $('input').each(function(){$(this).val('');})
             },
             error: function (e) {
-                alert('no');
+                alert('something went wrong. Please come back later!');
             },
         });
     });
