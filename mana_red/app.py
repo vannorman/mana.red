@@ -25,7 +25,6 @@ app.secret_key = env.get("APP_SECRET_KEY")
 
 @app.route('/waitlist/apply', methods=['POST'])
 def waitlist_apply():
-
     data = request.get_json()
     ip = request.remote_addr
     to = ['charlie@vannorman.ai' ]
@@ -46,12 +45,15 @@ def waitlist_apply():
         with open(filename,'w+'):
             pass
 
-    with open (filename, "a") as file:
-        file.write(",".join([ip,str(data),today])+"\n")
+    try:
+        
+        with open (filename, "a") as file:
+            file.write(",".join([ip,str(data),today])+"\n")
+        return jsonify({'success':True});
     
-    try: return jsonify({'success':True});
 
-    except: return jsonify({'success':False})            
+    except: 
+        return jsonify({'success':False})            
 
 
 
